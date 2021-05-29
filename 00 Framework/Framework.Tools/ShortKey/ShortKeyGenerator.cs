@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 
 namespace Framework.Tools.ShortKey
 {
@@ -6,7 +7,7 @@ namespace Framework.Tools.ShortKey
     {
         public async Task<string> GenerateUniqKey()
         {
-            return "TestKey";
+            return Guid.NewGuid().ToString();
         }
     }
 }
