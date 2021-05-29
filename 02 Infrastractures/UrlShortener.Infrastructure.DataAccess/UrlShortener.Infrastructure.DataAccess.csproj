@@ -5,6 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\00 Framework\Framework.Domain\Framework.Domain.csproj" />
     <ProjectReference Include="..\..\00 Framework\Framework.Tools\Framework.Tools.csproj" />
     <ProjectReference Include="..\..\01 Core\01 UrlShortener.DomainModels\01 UrlShortener.DomainModels.csproj" />
