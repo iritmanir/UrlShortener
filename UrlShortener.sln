@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlShortener", "UrlShortener\UrlShortener.csproj", "{62DF6B50-D2F3-4D65-995B-8B5C187EC990}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlShortener.EndPoints.API", "UrlShortener\UrlShortener.EndPoints.API.csproj", "{62DF6B50-D2F3-4D65-995B-8B5C187EC990}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00 Framework", "00 Framework", "{86A8FDBF-4653-40DC-AB38-9E8F083DBC71}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 Core", "01 Core", "{3C41DAC2-B2A7-450C-A139-F803B5411BD6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 Infrastractures", "02 Infrastractures", "{DFAC6181-E555-4B06-B0BA-B0C150F386D4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 EndPoints", "03 EndPoints", "{67E7DFE2-4584-45B2-B2EB-DC277283FFBD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +26,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{62DF6B50-D2F3-4D65-995B-8B5C187EC990} = {67E7DFE2-4584-45B2-B2EB-DC277283FFBD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BCC06A35-38AC-4E0B-8533-EC5F4AD2D2B6}
