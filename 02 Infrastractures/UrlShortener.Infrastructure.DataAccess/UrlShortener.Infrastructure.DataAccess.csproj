@@ -4,4 +4,11 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\00 Framework\Framework.Domain\Framework.Domain.csproj" />
+    <ProjectReference Include="..\..\00 Framework\Framework.Tools\Framework.Tools.csproj" />
+    <ProjectReference Include="..\..\01 Core\01 UrlShortener.DomainModels\01 UrlShortener.DomainModels.csproj" />
+    <ProjectReference Include="..\..\01 Core\02 UrlShortener.Contracts\02 UrlShortener.Contracts.csproj" />
+  </ItemGroup>
+
 </Project>
