@@ -7,7 +7,7 @@ namespace UrlShortener.Infrastructure.DataAccess._Base
     public sealed class UnitOfWork<TDbContext> : IUnitOfWork
         where TDbContext : BaseDbContext
     {
-        public IUrlRepository UrlRepository { get; }
+        public IUrlRepository UrlRepository { get; set; }
 
         private readonly TDbContext _dbContext;
         private readonly IUnitOfWorkConfiguration _config;

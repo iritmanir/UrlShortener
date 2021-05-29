@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using UrlShortener.Contracts.UrlAgg;
 
 namespace UrlShortener.Contracts._Base
 {
@@ -16,6 +17,6 @@ namespace UrlShortener.Contracts._Base
         void Rollback();
         Task RollbackAsync();
 
-       
+        IUrlRepository UrlRepository { get; set; }
     }
 }
