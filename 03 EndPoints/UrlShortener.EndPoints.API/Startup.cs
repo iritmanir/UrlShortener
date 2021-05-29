@@ -1,9 +1,11 @@
+using Framework.Tools.ShortKey;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using UrlShortener.ApplicationServices.UrlAgg;
 using UrlShortener.Contracts._Base;
 using UrlShortener.Contracts.UrlAgg;
 using UrlShortener.EndPoints.API.Configuration;
@@ -32,6 +34,10 @@ namespace UrlShortener.EndPoints.API
             services.AddSingleton<IUnitOfWorkConfiguration, UnitOfWorkConfig>();
             services.AddDbContext<ServiceDbContext>(options => options.UseInMemoryDatabase(databaseName: "UrlShortenerDB"));
             services.AddTransient<IUnitOfWork, UnitOfWork<ServiceDbContext>>();
+            services.AddSingleton<IShortKeyGenerator, ShortKeyGenerator>();
+
+            services.AddScoped<CreateShortUrlHandler>();
+            services.AddScoped<GetOriginalUrlHandler>();
             services.AddSwagger(serviceConfig);
         }
 
