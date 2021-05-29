@@ -1,10 +1,15 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using UrlShortener.Contracts._Base;
+using UrlShortener.Contracts.UrlAgg;
 using UrlShortener.EndPoints.API.Configuration;
 using UrlShortener.EndPoints.API.Extension;
+using UrlShortener.Infrastructure.DataAccess._Base;
+using UrlShortener.Infrastructure.DataAccess.UrlAgg;
 
 namespace UrlShortener.EndPoints.API
 {
@@ -23,6 +28,10 @@ namespace UrlShortener.EndPoints.API
             var serviceConfig = services.AddServiceConfig(Configuration);
 
             services.AddControllers();
+            services.AddTransient<IUrlRepository, UrlRepository>();
+            services.AddSingleton<IUnitOfWorkConfiguration, UnitOfWorkConfig>();
+            services.AddDbContext<ServiceDbContext>(options => options.UseInMemoryDatabase(databaseName: "UrlShortenerDB"));
+            services.AddTransient<IUnitOfWork, UnitOfWork<ServiceDbContext>>();
             services.AddSwagger(serviceConfig);
         }
 

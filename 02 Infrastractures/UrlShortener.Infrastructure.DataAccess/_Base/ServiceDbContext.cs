@@ -1,23 +1,24 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using UrlShortener.Contracts._Base;
+using UrlShortener.DomainModels.UrlAgg.Entities;
 
 namespace UrlShortener.Infrastructure.DataAccess._Base
 {
-    public class ServiceDbContext: BaseDbContext
+    public class ServiceDbContext : BaseDbContext
     {
         #region DbSets
-        
+        public virtual DbSet<Url> Url { get; set; }
         #endregion
 
         private readonly IUnitOfWorkConfiguration _configuration;
 
-        public ServiceDbContext(DbContextOptions<ServiceDbContext> options, 
-            IUnitOfWorkConfiguration configuration) : base(options) 
+        public ServiceDbContext(DbContextOptions<ServiceDbContext> options,
+            IUnitOfWorkConfiguration configuration) : base(options)
             => _configuration = configuration;
-        
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(_configuration.SqlServerConnectionString);
+            //optionsBuilder.UseSqlServer(_configuration.SqlServerConnectionString);
             base.OnConfiguring(optionsBuilder);
         }
 
